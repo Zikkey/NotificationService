@@ -1,0 +1,6 @@
+@NS.Sms_HostAddress = http://localhost:5260
+
+GET {{NS.Sms_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
