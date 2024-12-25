@@ -25,11 +25,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Email\Email.csproj" />
-      <ProjectReference Include="..\Gateway.Api\Gateway.Api.csproj" />
-      <ProjectReference Include="..\Gateway.Worker\Gateway.Worker.csproj" />
-      <ProjectReference Include="..\Push\Push.csproj" />
-      <ProjectReference Include="..\Sms\Sms.csproj" />
+      <ProjectReference Include="..\Channels\Email\Email.csproj" />
+      <ProjectReference Include="..\Gateway\Gateway.Api\Gateway.Api.csproj" />
+      <ProjectReference Include="..\Gateway\Gateway.Worker\Gateway.Worker.csproj" />
+      <ProjectReference Include="..\Channels\Push\Push.csproj" />
+      <ProjectReference Include="..\Channels\Sms\Sms.csproj" />
     </ItemGroup>
 
 </Project>

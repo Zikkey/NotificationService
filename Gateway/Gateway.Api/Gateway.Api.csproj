@@ -13,13 +13,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="appsettings.Development.json">
-        <DependentUpon>appsettings.json</DependentUpon>
-      </Content>
+      <ProjectReference Include="..\..\Bridge.Shared\Bridge.Shared.csproj" />
+      <ProjectReference Include="..\Gateway.Infrastructure\Gateway.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Bridge.Shared\Bridge.Shared.csproj" />
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
     </ItemGroup>
 
 </Project>

@@ -1,26 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email", "Email\Email.csproj", "{269DC11A-071F-4E62-B885-1319B38E0973}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email", "Channels\Email\Email.csproj", "{269DC11A-071F-4E62-B885-1319B38E0973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Push", "Push\Push.csproj", "{A69BF719-FA4E-4C7B-A8A2-CB20DF99E7E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Push", "Channels\Push\Push.csproj", "{A69BF719-FA4E-4C7B-A8A2-CB20DF99E7E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sms", "Sms\Sms.csproj", "{592758CB-7235-4098-AD0B-BC0C6FC6E95F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sms", "Channels\Sms\Sms.csproj", "{592758CB-7235-4098-AD0B-BC0C6FC6E95F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Channels", "Channels", "{EB2F06DB-AB83-4B67-8E18-0B47AE502E59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Worker", "Gateway.Worker\Gateway.Worker.csproj", "{4ADE6108-918C-4363-828B-0AFCF2B76F0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Worker", "Gateway\Gateway.Worker\Gateway.Worker.csproj", "{4ADE6108-918C-4363-828B-0AFCF2B76F0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{0788A238-77F9-4923-AFCE-BEFD5F816EE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Api", "Gateway.Api\Gateway.Api.csproj", "{5367F72A-1D5B-4B79-BCBC-BBB0694A1A09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Api", "Gateway\Gateway.Api\Gateway.Api.csproj", "{5367F72A-1D5B-4B79-BCBC-BBB0694A1A09}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{7F2BCEFD-E27A-4EA0-9E39-9CC620B34039}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Application", "Gateway.Application\Gateway.Application.csproj", "{05AD80CB-384F-4E99-88C4-C5EEEFB1F609}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Application", "Gateway\Gateway.Application\Gateway.Application.csproj", "{05AD80CB-384F-4E99-88C4-C5EEEFB1F609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Infrastructure", "Gateway.Infrastructure\Gateway.Infrastructure.csproj", "{B58EA6D0-46D8-499B-9675-C2FC3014415A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Infrastructure", "Gateway\Gateway.Infrastructure\Gateway.Infrastructure.csproj", "{B58EA6D0-46D8-499B-9675-C2FC3014415A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Domain", "Gateway.Domain\Gateway.Domain.csproj", "{A7859C88-1EF2-4114-A8E3-2139383C50C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Domain", "Gateway\Gateway.Domain\Gateway.Domain.csproj", "{A7859C88-1EF2-4114-A8E3-2139383C50C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{2E4137F8-5E17-499C-B7A8-FF6528E0F013}"
 EndProject
