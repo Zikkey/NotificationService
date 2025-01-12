@@ -7,4 +7,26 @@
         <IsAspireSharedProject>true</IsAspireSharedProject>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.4" />
+      <PackageReference Include="Serilog" Version="4.2.0" />
+      <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Models\Requests\EmailPacket.cs">
+        <DependentUpon>Packet.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Requests\PushPacket.cs">
+        <DependentUpon>Packet.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Models\Requests\SmsPacket.cs">
+        <DependentUpon>Packet.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

@@ -1,40 +1,20 @@
+using Bridge.Shared;
 using Bridge.Shared.Models;
+using Bridge.Shared.Models.Requests;
+using Gateway.DataAccess.Migrations;
+using Gateway.Infrastructure;
 using MassTransit;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args).UseCustomLogging();
 
 var services = builder.Services;
-var configuration = builder.Configuration;
 
+builder.ConfigureNotificationPublisher();
+
+services.AddDataAccess();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 services.AddControllers();
-services.AddMassTransit(x =>
-{
-    x.UsingRabbitMq((_, cfg) =>
-    {
-        cfg.Host(new Uri("rabbitmq://localhost:63685"), h =>
-        {
-            h.Username("username");
-            h.Password("password");
-        });
-        
-        cfg.Message<EmailPacket>(m => 
-        {
-            m.SetEntityName("email-packet");
-        });
-        
-        cfg.Message<SmsPacket>(m => 
-        {
-            m.SetEntityName("sms-packet");
-        });
-        
-        cfg.Message<PushPacket>(m => 
-        {
-            m.SetEntityName("push-packet");
-        });
-    });
-});
 
 var app = builder.Build();
 
@@ -46,4 +26,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.MigrateDatabaseByType<Migration_2025_01_10_17_28_13>();
 app.Run();

@@ -10,13 +10,14 @@ var kibana = builder.AddContainer("kibana", "kibana", "8.17.0")
     .WaitFor(elastic);
     */
 
-var username = builder.AddParameter("username", secret: true);
-var password = builder.AddParameter("password", secret: true);
+var username = builder.AddParameter("username", "user", secret: true);
+var password = builder.AddParameter("password", "password", secret: true);
 var rabbit = builder.AddRabbitMQ("messaging", username, password, 63685)
     .WithManagementPlugin();
-var db = builder.AddPostgres("gateway-postgre", port: 54322)
+var dbPassword = builder.AddParameter("dbPassword", "DfdFsd33HGrfg2g", secret: true);
+var db = builder.AddPostgres("gateway-postgre", username, dbPassword, port: 54322)
     .WithPgAdmin()
-    .WithDataBindMount("X:/db")
+    .WithDataBindMount(@"C:\Cubody\NotificationServiceDb")
     .AddDatabase("gatewaydb");
 
 var email = builder.AddProject<Projects.Email>("email-service")
@@ -40,6 +41,14 @@ builder.AddProject<Projects.Gateway_Api>("gateway-api")
 
 builder.AddProject<Projects.Gateway_Worker>("gateway-worker")
     .WithReference(db)
-    .WaitFor(db);
+    .WithReference(rabbit)
+    .WaitFor(db)
+    .WaitFor(rabbit);
+
+builder.AddProject<Projects.Gateway_Consumer>("gateway-consumer")
+    .WithReference(db)
+    .WithReference(rabbit)
+    .WaitFor(db)
+    .WaitFor(rabbit);
 
 builder.Build().Run();

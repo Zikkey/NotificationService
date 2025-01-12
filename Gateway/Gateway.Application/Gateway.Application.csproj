@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Gateway.Domain\Gateway.Domain.csproj" />
+      <ProjectReference Include="..\Gateway.DataAccess\Gateway.DataAccess.csproj" />
     </ItemGroup>
 
 </Project>

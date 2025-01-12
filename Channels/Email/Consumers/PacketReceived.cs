@@ -2,6 +2,8 @@
 using System.Text.Json;
 using System.Text.Unicode;
 using Bridge.Shared.Models;
+using Bridge.Shared.Models.Requests;
+using Bridge.Shared.Models.Responses;
 using MassTransit;
 
 namespace Email.Consumers;
@@ -16,5 +18,10 @@ public class PacketReceived : IConsumer<EmailPacket>
             WriteIndented = true
         });
         Console.WriteLine($"Email packet received message: {jsonMessage}");
+
+        await context.Publish(new PacketProcessed
+        {
+            IsProcessed = true
+        });
     }
 }
